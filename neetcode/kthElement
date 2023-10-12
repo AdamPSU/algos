@@ -3,16 +3,21 @@
 #unsolved 
 
 def topKFrequent(nums, k):
-    num_freq = {}
+    # freq = {} 
+    # for num in nums: 
+    #     freq[num] = freq.get(num, 0) + 1 
+    freq = {} 
+    for num in nums: 
+        freq[num] = freq.get(num, 0) + 1    
+    sorted_freq = sorted(freq.items(), key=lambda tup:tup[1])
+    return sorted_freq[:k]
 
-    for i in range(len(nums)): 
-        if nums[i] not in num_freq: 
-            num_freq[nums[i]] = 1
-        else: 
-            num_freq[nums[i]] += 1 
 
-    pass
-        
+print(topKFrequent([1,1,1,2,2,3], 2))
 
-#to create a frequency table 
+    
+
+
+
+
 
